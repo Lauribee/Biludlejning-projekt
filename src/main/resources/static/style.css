@@ -1,0 +1,55 @@
+body {
+    margin: 0;
+    background-color: lightblue;
+}
+
+/* Style the header with a grey background and some padding */
+.header {
+    overflow: hidden;
+    background-color: skyblue;
+    padding: 20px 10px;
+
+}
+
+/* Style the header links */
+.logo {
+    color: black;
+    float: right;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 25px;
+    line-height: 25px;
+    border-radius: 4px;
+
+}
+
+/*background color*/
+.container {
+    margin-top: 50px;
+    margin-left: 250px;
+    margin-right: 250px;
+
+}
+
+/* Add media queries for responsiveness - when the screen is 500px wide or less, stack the links on top of each other */
+@media screen and (max-width: 500px) {
+    .header h1 {
+        float: none;
+        display: block;
+        text-align: left;
+    }
+}
+
+.selection-box {
+    width: 125px;
+    height: 125px;
+    margin: 0;
+    padding: 16px 20px;
+    border: none;
+    display: inline-block;
+    background-color: #555;
+    color: white;
+    border-radius: 25px;
+    bottom: 23px;
+    right: 28px;
+}

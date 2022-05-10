@@ -1,10 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <link rel="stylesheet" th:href="@{style.css}" href="../static/style.css">
+    <title>Biludlejning</title>
 </head>
+
 <body>
+<header th:insert="fragments/general.html :: header"> </header>
 
 </body>
 </html>
