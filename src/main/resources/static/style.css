@@ -11,7 +11,7 @@ body {
 
 }
 
-/* Style the header links */
+/* Style the header */
 .logo {
     color: black;
     float: right;
@@ -23,11 +23,19 @@ body {
 
 }
 
+.exitbtn {
+    float: left;
+    padding: 25px;
+    font-size: 35px;
+    text-decoration: none;
+}
+
 /*background color*/
 .container {
     margin-top: 50px;
     margin-left: 250px;
     margin-right: 250px;
+    text-align: center;
 
 }
 
@@ -41,15 +49,13 @@ body {
 }
 
 .selection-box {
-    width: 125px;
-    height: 125px;
-    margin: 0;
-    padding: 16px 20px;
-    border: none;
+    width: 110px;
+    height: 50px;
+    margin: 50px;
+    text-align: center;
+    padding-top: 20px;
     display: inline-block;
-    background-color: #555;
+    background-color: darkslateblue;
     color: white;
-    border-radius: 25px;
-    bottom: 23px;
-    right: 28px;
+
 }

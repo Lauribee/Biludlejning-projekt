@@ -2,9 +2,19 @@
 <html lang="en" xmlns:th="https://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{style.css}" href="../static/style.css">
     <title>Title</title>
 </head>
 <body>
+<div th:replace="fragments/general :: header"> </div>
+
+<div class="container">
+
+    <a href="/opret-lejeaftale" class="selection-box"> Opret lejeaftale</a>
+    <a class="selection-box"> Meld lejeaftale som tilbagevendt</a>
+    <a class="selection-box"> Afslut lejeaftale</a>
+
+</div>
 
 </body>
 </html>

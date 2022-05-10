@@ -7,7 +7,14 @@
 </head>
 
 <body>
-<header th:insert="fragments/general.html :: header"> </header>
+<div th:replace="fragments/general :: header"> </div>
+<div class="container">
+
+    <a href="/dataregistrering" class="selection-box"> Dataregistrering</a>
+    <a href="/skaderegistrering" class="selection-box"> Skaderegistrering og udbedring</a>
+    <a href="/statistik" class="selection-box"> Statistik</a>
+
+</div>
 
 </body>
 </html>
