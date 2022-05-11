@@ -24,7 +24,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 
         @GetMapping("/statistik")
         public String stats() {
-            return "statistik";
+            return "udviklere";
         }
 
         @GetMapping("/opret-lejeaftale")
