@@ -1,27 +1,14 @@
 package com.example.bilabonnement;
 
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.OutputStream;
-import java.util.Properties;
+import com.example.bilabonnement.repository.BilRepository;
 
 public class Testm {
 
+
+
     public static void main(String[] args) {
-         try (OutputStream output = new FileOutputStream("src/main/resources/config.properties")){
+        BilRepository bilRepository = new BilRepository();
+        bilRepository.createConnection();
 
-             Properties prop = new Properties();
-
-             prop.setProperty("db.url", "127.0.0.1:3306");
-             prop.setProperty("db.user", "wetried");
-             prop.setProperty("db.password", "bananflue");
-
-             prop.store(output, "");
-         } catch (FileNotFoundException e) {
-             e.printStackTrace();
-         } catch (IOException e) {
-             e.printStackTrace();
-         }
     }
 }
