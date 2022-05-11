@@ -22,8 +22,8 @@ import org.springframework.web.bind.annotation.GetMapping;
             return "skaderegistrering";
         }
 
-        @GetMapping("/statistik")
-        public String stats() {
+        @GetMapping("/udviklere")
+        public String udviklere() {
             return "udviklere";
         }
 
@@ -31,5 +31,16 @@ import org.springframework.web.bind.annotation.GetMapping;
         public String opretLejeaftale() {
             return "opret-lejeaftale";
         }
+
+        @GetMapping("/statistik")
+        public String stats() {
+            return "statistik";
+        }
+
+        @GetMapping("/lejeaftaler")
+        public String lejeaftaler() {
+            return "lejeaftaler";
+        }
+
 
 }
