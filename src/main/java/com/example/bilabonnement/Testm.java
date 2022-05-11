@@ -13,10 +13,11 @@ public class Testm {
 
              Properties prop = new Properties();
 
-             prop.setProperty()
-             prop.setProperty()
-             prop.setProperty()
+             prop.setProperty("db.url", "127.0.0.1:3306");
+             prop.setProperty("db.user", "wetried");
+             prop.setProperty("db.password", "bananflue");
 
+             prop.store(output, "");
          } catch (FileNotFoundException e) {
              e.printStackTrace();
          } catch (IOException e) {
