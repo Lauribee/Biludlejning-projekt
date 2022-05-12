@@ -1,13 +1,12 @@
 package com.example.bilabonnement.repository;
 
 
+import com.example.bilabonnement.models.Bil;
+
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.Properties;
 
 public class BilRepository {
@@ -32,5 +31,38 @@ public class BilRepository {
             System.out.println("error");
 
         }
+    }
+
+    public Bil getCarFromDB(String stelnummerFraBil) {
+       Bil currentBil = null;
+        try {
+            createConnection();
+
+            String query = " USE biludlejning";
+            pps = con.prepareStatement(query);
+            pps.execute();
+
+            query = " SELECT * FROM biludlejning.biler WHERE stelnummer =  " + stelnummerFraBil;
+
+
+            try (Statement stmt = con.createStatement()) {
+                ResultSet rs = stmt.executeQuery(query);
+                while (rs.next()) {
+                    String stelnummer = rs.getString("stelnummer");
+                    String mærke = rs.getString("mærke");
+                    String model = rs.getString("model");
+                    double stålpris = rs.getDouble("stålpris");
+                    double regafgift = rs.getDouble("regafgift");
+                    double CO2udledning = rs.getDouble("CO2udledning");
+                    currentBil = new Bil(stelnummer, mærke, model, stålpris, regafgift, CO2udledning);
+                }
+            } catch (SQLException e) {
+                System.err.println("GOT AN EXCEPTION");
+                System.err.println(e.getMessage());
+            }
+        } catch(java.sql.SQLException e) {
+            System.err.println(e);
+        }
+        return currentBil;
     }
 }
