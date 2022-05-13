@@ -5,10 +5,7 @@ import com.example.bilabonnement.models.Kunde;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.Properties;
 
 public class KundeRepository {
@@ -36,7 +33,7 @@ public class KundeRepository {
         }
     }
 
-    public void insertKlient(Kunde klient) {
+    public void insertKunde(Kunde kunde) {
 
         try {
 
@@ -49,9 +46,9 @@ public class KundeRepository {
 
             query = " INSERT INTO kunder (cprnummer, adresse, navn)" + " VALUES (?, ?, ?)";
             pps = con.prepareStatement(query);
-            pps.setString(1, klient.getCprnummer());
-            pps.setString(2, klient.getAdresse());
-            pps.setString(3, klient.getNavn());
+            pps.setString(1, kunde.getCprnummer());
+            pps.setString(2, kunde.getAdresse());
+            pps.setString(3, kunde.getNavn());
 
             pps.execute();
 
@@ -63,6 +60,31 @@ public class KundeRepository {
 
         }
 
+    }
+
+    public Kunde getKundeFromDB(String kundeCPR) throws SQLException {
+        createConnection();
+
+        String query = " USE biludlejning";
+        pps = con.prepareStatement(query);
+        pps.execute();
+
+        query = " SELECT * FROM kunder" + " WHERE cprnummer =" + " '" + kundeCPR + "'";
+        Kunde currentKunde = null;
+
+        try (Statement stmt = con.createStatement()) {
+            ResultSet rs = stmt.executeQuery(query);
+            while (rs.next()) {
+                String cprnummer = rs.getString("cprnummer");
+                String adresse = rs.getString("adresse");
+                String navn = rs.getString("navn");
+                currentKunde = new Kunde(cprnummer, adresse, navn);
+            }
+        } catch (SQLException e) {
+            System.err.println("GOT AN EXCEPTION");
+            System.err.println(e.getMessage());
+        }
+        return currentKunde;
     }
 
 
