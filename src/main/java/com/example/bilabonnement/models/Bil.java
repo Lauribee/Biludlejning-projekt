@@ -8,6 +8,7 @@ public class Bil {
     private double stålpris;
     private double regafgift;
     private double CO2udledning;
+
     public Bil(String stelnummer, String mærke, String model, double stålpris, double regafgift, double co2udledning) {
         this.stelnummer = stelnummer;
         this.mærke = mærke;
