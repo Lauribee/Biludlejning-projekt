@@ -1,6 +1,6 @@
 package com.example.bilabonnement.repository;
 
-import com.example.bilabonnement.models.Klient;
+import com.example.bilabonnement.models.Kunde;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -11,7 +11,7 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.Properties;
 
-public class KlientRepository {
+public class KundeRepository {
 
     private Connection con;
     private PreparedStatement pps;
@@ -36,7 +36,7 @@ public class KlientRepository {
         }
     }
 
-    public void insertKlient(Klient klient) {
+    public void insertKlient(Kunde klient) {
 
         try {
 

@@ -1,12 +1,12 @@
 package com.example.bilabonnement.models;
 
-public class Klient {
+public class Kunde {
 
     private String cprnummer;
     private String adresse;
     private String navn;
 
-    public Klient(String cprnummer, String adresse, String navn) {
+    public Kunde(String cprnummer, String adresse, String navn) {
         this.cprnummer = cprnummer;
         this.adresse = adresse;
         this.navn = navn;
