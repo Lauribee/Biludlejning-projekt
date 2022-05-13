@@ -9,7 +9,7 @@ import java.io.InputStream;
 import java.sql.*;
 import java.util.Properties;
 
-public class BilRepository {
+public class BilRepository extends Repository {
     private Connection con;
     private PreparedStatement pps;
     private Properties properties = new Properties();
