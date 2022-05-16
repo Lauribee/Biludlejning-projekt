@@ -10,7 +10,7 @@ import java.sql.SQLException;
 import java.util.Properties;
 
 public class Repository {
-
+// Virker ikke som den skal lige nu, giver null pointer exceptions i de andre klasse ved con, i stedet for at skabe en connection.
 
         private Connection con;
         private PreparedStatement pps;

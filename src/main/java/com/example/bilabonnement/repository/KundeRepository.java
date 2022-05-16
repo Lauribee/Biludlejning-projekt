@@ -8,7 +8,7 @@ import java.io.InputStream;
 import java.sql.*;
 import java.util.Properties;
 
-public class KundeRepository extends Repository{
+public class KundeRepository{
 
     private Connection con;
     private PreparedStatement pps;

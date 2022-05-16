@@ -38,10 +38,7 @@ public class Kunde {
 
     @Override
     public String toString() {
-        return "Kunde{" +
-                "cprnummer='" + cprnummer + '\'' +
-                ", adresse='" + adresse + '\'' +
-                ", navn='" + navn + '\'' +
-                '}';
+        return "Kunde { " +
+                "cprnummer =" + cprnummer;
     }
 }

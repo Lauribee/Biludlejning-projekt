@@ -18,15 +18,33 @@ public class Bil {
         this.CO2udledning = co2udledning;
     }
 
+    public String getStelnummer() {
+        return stelnummer;
+    }
+
+    public String getMærke() {
+        return mærke;
+    }
+
+    public String getModel() {
+        return model;
+    }
+
+    public double getStålpris() {
+        return stålpris;
+    }
+
+    public double getRegafgift() {
+        return regafgift;
+    }
+
+    public double getCO2udledning() {
+        return CO2udledning;
+    }
+
     @Override
     public String toString() {
-        return "Bil{" +
-                "stelnummer='" + stelnummer + '\'' +
-                ", mærke='" + mærke + '\'' +
-                ", model='" + model + '\'' +
-                ", stålpris=" + stålpris +
-                ", regafgift=" + regafgift +
-                ", CO2udledning=" + CO2udledning +
-                '}';
+        return "Bil { " +
+                "stelnummer = " + stelnummer;
     }
 }

@@ -29,9 +29,8 @@ public class Lejeaftale {
 
     @Override
     public String toString() {
-        return "Lejeaftale{" +
-                "bil=" + bil +
-                ", kunde=" + kunde +
-                '}';
+        return "Lejeaftalen { " +
+                "bil = " + bil +
+                ", kunde = " + kunde;
     }
 }
