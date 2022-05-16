@@ -45,6 +45,7 @@ public class LejeaftaleRepository{
 
         String cprnummer = lejeaftaleKunde.getCprnummer();
         String stelnummer = lejeaftaleBil.getStelnummer();
+        boolean status = lejeaftale.getStatus();
 
         try {
 
@@ -59,6 +60,7 @@ public class LejeaftaleRepository{
             pps = con.prepareStatement(query);
             pps.setString(1, cprnummer);
             pps.setString(2, stelnummer);
+            pps.setBoolean(3, status);
 
             pps.execute();
 
@@ -82,6 +84,7 @@ public class LejeaftaleRepository{
         query = " SELECT * FROM lejeaftaler" + " WHERE cprnummer =" + " '" + kundeCPR + "'";
         String cprnummer = null;
         String stelnummer = null;
+        boolean status = false;
         Lejeaftale currentLejeaftale = null;
 
         try (Statement stmt = con.createStatement()) {
@@ -90,10 +93,11 @@ public class LejeaftaleRepository{
                 int lejeaftaleID = rs.getInt("lejeaftaleID");
                 cprnummer = rs.getString("cprnummer");
                 stelnummer = rs.getString("stelnummer");
+                status = rs.getBoolean("status");
             }
             Kunde currentKunde = kr.getKundeFromDB(cprnummer);
             Bil currentBil = br.getCarFromDB(stelnummer);
-            currentLejeaftale = new Lejeaftale(currentBil, currentKunde);
+            currentLejeaftale = new Lejeaftale(currentBil, currentKunde, status);
 
 
         } catch (SQLException e) {
