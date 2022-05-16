@@ -3,12 +3,12 @@ package com.example.bilabonnement.models;
 public class Lejeaftale {
     private Bil bil;
     private Kunde kunde;
-    private String status;
+    private boolean status;
 
-    public Lejeaftale(Bil bil, Kunde kunde, String status) {
+    public Lejeaftale(Bil bil, Kunde kunde, boolean status) {
         this.bil = bil;
         this.kunde = kunde;
-        this.status = status;
+        this.status = true;
     }
 
     public Bil getBil() {
@@ -27,11 +27,11 @@ public class Lejeaftale {
         this.kunde = kunde;
     }
 
-    public String getStatus() {
+    public boolean getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(boolean status) {
         this.status = status;
     }
 

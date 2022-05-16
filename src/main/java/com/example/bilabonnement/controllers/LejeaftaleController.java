@@ -27,7 +27,7 @@ public class LejeaftaleController {
         Kunde kunde = (Kunde) session.getAttribute("kunde");
         Enum status = bc.runStatusKontrol(bil);
 
-        Lejeaftale lejeaftale = new Lejeaftale(kunde, bil, status );
+        Lejeaftale lejeaftale = new Lejeaftale(bil, kunde, status );
         lr.indsætLejeaftale(lejeaftale);
         return "redirect:/lejeaftaler";
     }
