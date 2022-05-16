@@ -3,6 +3,8 @@ package com.example.bilabonnement.models;
 public class Lejeaftale {
     private Bil bil;
     private Kunde kunde;
+    private boolean erTilbageLeveret;
+    private boolean erSkadeRegistreret;
 
     public Lejeaftale(Bil bil, Kunde kunde) {
         this.bil = bil;

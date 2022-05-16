@@ -59,3 +59,20 @@ body {
     color: white;
 
 }
+
+/*The popup form - hidden by default */
+.popup-form {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    right: 15px;
+    border: 3px solid #f1f1f1;
+    z-index: 9;
+}
+
+/*add styles to the form container*/
+.form-container {
+    max-width: 300px;
+    padding: 10px;
+    background-color: white;
+}

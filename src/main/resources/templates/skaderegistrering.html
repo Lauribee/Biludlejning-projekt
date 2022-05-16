@@ -11,20 +11,14 @@
 <div class="container">
 
 
-    <div class="bilrapport">
-        <button class="open-button" onclick="openForm()">Registrer skader</button>
-        <div class="wishlist-box" th:each="wishlist : ${userWishlists}">
-            <p th:text="${wishlist.wishlistName}"></p>
-        </div>
-
-    </div>
+        <div class="selection-box" onclick="openForm()">Registrer skader</div>
 
 
     <div class="popup-form" id="myForm">
         <form class="form-container" method="POST" action="/skaderegistrering">
-            <h1>Registrer skader</h1>
+            <h1>Skaderegistreringskema</h1>
 
-            <label for="wishlist-name"><b>Navn</b></label>
+            <label for=""><b>Navn</b></label>
             <input id="wishlist-name" type="text" placeholder="Indtast ønskeliste navn" name="wishlist-name" required>
             <label for="wishlist-description"><b>Beskrivelse</b></label>
             <input id="wishlist-description" type="text" placeholder="Indtast beskrivelse" name="wishlist-description">
@@ -35,6 +29,16 @@
     </div>
 
 </div>
+
+<script>
+    function openForm() {
+        document.getElementById("myForm").style.display = "block";
+    }
+
+    function closeForm() {
+        document.getElementById("myForm").style.display = "none";
+    }
+</script>
 
 </body>
 </html>
