@@ -2,7 +2,7 @@ package com.example.bilabonnement.models;
 
 public class Bil {
 
-    enum Status {
+    public enum BilStatus {
         UDLEJET,
         TILBAGELEVERET,
         AFSLUTTET
@@ -14,9 +14,9 @@ public class Bil {
     private double stålpris;
     private double regafgift;
     private double CO2udledning;
-    private Status status;
+    private BilStatus status;
 
-    public Bil(String stelnummer, String mærke, String model, double stålpris, double regafgift, double co2udledning, Status status) {
+    public Bil(String stelnummer, String mærke, String model, double stålpris, double regafgift, double co2udledning, BilStatus status) {
         this.stelnummer = stelnummer;
         this.mærke = mærke;
         this.model = model;
@@ -74,17 +74,24 @@ public class Bil {
         this.CO2udledning = CO2udledning;
     }
 
-    public Status getStatus() {
+    public BilStatus getStatus() {
         return status;
     }
 
-    public void setStatus(Status status) {
+    public void setStatus(BilStatus status) {
         this.status = status;
     }
 
     @Override
     public String toString() {
-        return "Bil { " +
-                "stelnummer = " + stelnummer;
+        return "Bil{" +
+                "stelnummer='" + stelnummer + '\'' +
+                ", mærke='" + mærke + '\'' +
+                ", model='" + model + '\'' +
+                ", stålpris=" + stålpris +
+                ", regafgift=" + regafgift +
+                ", CO2udledning=" + CO2udledning +
+                ", status=" + status +
+                '}';
     }
 }

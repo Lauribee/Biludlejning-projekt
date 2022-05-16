@@ -7,7 +7,31 @@
 </head>
 <body>
 <div th:replace="fragments/general :: header"> </div>
-/*her kommer til at være formularen som datareg skal udfylde når en lejeaftale skal registreres/*
 
+<div class="selection-box" onclick="openForm()">Opret lejeaftale</div>
+
+<div class="popup-form" id="myForm">
+    <form class="form-container" method="POST" action="/opret-lejeaftale">
+        <h1>Lejeaftaleformular</h1>
+
+        <label for="cprnummer"><b>cpr-nummer</b></label>
+        <input id="cprnummer" type="text" placeholder="Indtast cpr-nummer af kunde" name="cprnummer" required>
+        <label for="stelnummer"><b>Stelnummer</b></label>
+        <input id="stelnummer" type="text" placeholder="Indtast stelnummer på ønsket bil" name="cprnummer">
+
+        <input type="submit" class="btn" value="Opret lejeaftale">
+        <input type="button" class="btn cancel" onclick="closeForm()" value="Luk">
+    </form>
+</div>
+
+<script>
+    function openForm() {
+        document.getElementById("myForm").style.display = "block";
+    }
+
+    function closeForm() {
+        document.getElementById("myForm").style.display = "none";
+    }
+</script>
 </body>
 </html>

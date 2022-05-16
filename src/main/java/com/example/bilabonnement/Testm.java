@@ -18,17 +18,7 @@ public class Testm {
         LejeaftaleRepository lr = new LejeaftaleRepository();
         BilRepository br = new BilRepository();
 
-       /*Kunde kundeTest = kr.getKundeFromDB("75849109812");
-        System.out.println(kundeTest.toString());
-        Bil bilTest = br.getCarFromDB("20202020");
-        System.out.println(bilTest);
-        Lejeaftale lejeaftaleTest = new Lejeaftale(bilTest, kundeTest);
-        System.out.println(lejeaftaleTest);
-        lr.insertLejeaftale(lejeaftaleTest);*/
-        Lejeaftale newLejeaftale = lr.getLejeaftaleFromDB("75849109812");
-        System.out.println(newLejeaftale);
-
-
+        System.out.println(br.getCarFromDB("1234567890"));
 
     }
 }

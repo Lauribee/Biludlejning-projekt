@@ -6,6 +6,7 @@ import com.example.bilabonnement.models.Bil;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.ObjectInputFilter;
 import java.sql.*;
 import java.util.Properties;
 
@@ -54,7 +55,9 @@ public class BilRepository{
                     double stålpris = rs.getDouble("stålpris");
                     double regafgift = rs.getDouble("regafgift");
                     double CO2udledning = rs.getDouble("CO2udledning");
-                    currentBil = new Bil(stelnummer, mærke, model, stålpris, regafgift, CO2udledning);
+                    Bil.BilStatus status = Bil.BilStatus.valueOf(rs.getString("status"));
+
+                    currentBil = new Bil(stelnummer, mærke, model, stålpris, regafgift, CO2udledning, status);
                 }
             } catch (SQLException e) {
                 System.err.println("GOT AN EXCEPTION");
