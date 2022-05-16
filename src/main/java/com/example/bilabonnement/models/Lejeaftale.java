@@ -3,12 +3,12 @@ package com.example.bilabonnement.models;
 public class Lejeaftale {
     private Bil bil;
     private Kunde kunde;
-    private boolean erTilbageLeveret;
-    private boolean erSkadeRegistreret;
+    private String status;
 
-    public Lejeaftale(Bil bil, Kunde kunde) {
+    public Lejeaftale(Bil bil, Kunde kunde, String status) {
         this.bil = bil;
         this.kunde = kunde;
+        this.status = status;
     }
 
     public Bil getBil() {
@@ -27,10 +27,22 @@ public class Lejeaftale {
         this.kunde = kunde;
     }
 
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+
+
     @Override
     public String toString() {
-        return "Lejeaftalen { " +
-                "bil = " + bil +
-                ", kunde = " + kunde;
+        return "Lejeaftale{" +
+                "bil=" + bil +
+                ", kunde=" + kunde +
+                ", status=" + status +
+                '}';
     }
 }

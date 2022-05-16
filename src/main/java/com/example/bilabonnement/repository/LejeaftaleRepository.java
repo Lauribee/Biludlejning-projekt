@@ -38,7 +38,7 @@ public class LejeaftaleRepository{
         }
     }
 
-    public void insertLejeaftale(Lejeaftale lejeaftale) {
+    public void indsætLejeaftale(Lejeaftale lejeaftale) {
 
         Kunde lejeaftaleKunde = lejeaftale.getKunde();
         Bil lejeaftaleBil = lejeaftale.getBil();
