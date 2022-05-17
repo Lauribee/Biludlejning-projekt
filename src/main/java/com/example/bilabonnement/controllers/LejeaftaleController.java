@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
 import java.sql.SQLException;
+import java.util.Map;
 
 
 @Controller
@@ -21,15 +22,20 @@ public class LejeaftaleController {
     BilRepository br = new BilRepository();
 
     @PostMapping("/opret-lejeaftale")
-    public String opretLejeaftale(@RequestBody String stelnummer, @RequestBody String cprNummer) throws SQLException {
+    public String opretLejeaftale(@RequestBody Map<String, String> test) throws SQLException {
+        String cprnummer = test.get("cprnummer");
+        String stelnummer = test.get("stelnummer");
 
-        Kunde kunde = kr.getKundeFromDB(cprNummer);
+        System.out.println(stelnummer);
+        System.out.println(cprnummer);
+        Kunde kunde = kr.getKundeFromDB(cprnummer);
         Bil bil = br.getCarFromDB(stelnummer);
 
+
         Lejeaftale lejeaftale = new Lejeaftale(bil, kunde, true);
-        //System.out.println(lejeaftale.toString());
+        System.out.println(lejeaftale.toString());
         lr.indsætLejeaftale(lejeaftale);
-        return "redirect:/lejeaftaler";
+        return "redirect:/opret-lejeaftale";
     }
 
 }
