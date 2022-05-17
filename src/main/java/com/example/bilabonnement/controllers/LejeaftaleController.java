@@ -45,6 +45,7 @@ public class LejeaftaleController {
         return "redirect:/opret-lejeaftale";
     }
 
+
     /*@GetMapping("/lejeaftaler")
     public String wishlist(Model model, LejeaftaleKrav lejeaftaleKrav) throws SQLException {
 
