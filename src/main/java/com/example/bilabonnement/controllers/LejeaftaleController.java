@@ -8,11 +8,17 @@ import com.example.bilabonnement.repository.BilRepository;
 import com.example.bilabonnement.repository.KundeRepository;
 import com.example.bilabonnement.repository.LejeaftaleRepository;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.sql.SQLException;
-import java.util.Map;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
 
 
 @Controller
@@ -38,5 +44,20 @@ public class LejeaftaleController {
         lr.indsætLejeaftale(lejeaftale);
         return "redirect:/opret-lejeaftale";
     }
+
+    /*@GetMapping("/lejeaftaler")
+    public String wishlist(Model model, LejeaftaleKrav lejeaftaleKrav) throws SQLException {
+
+        String cprnummer = lejeaftaleKrav.getCprnummer();
+
+        ArrayList<Lejeaftale> lejeaftaler = new ArrayList<Lejeaftale>((Collection<? extends Lejeaftale>) lr.getLejeaftaleFromDB(cprnummer));
+        System.out.println(lejeaftaler.size());
+
+
+        model.addAttribute("lejeaftaler", lejeaftaler);
+
+        return "lejeaftaler";
+
+    }*/
 
 }

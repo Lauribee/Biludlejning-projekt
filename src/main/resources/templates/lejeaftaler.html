@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" th:href="@{style.css}" href="../static/style.css">
@@ -9,6 +9,15 @@
 <div th:replace="fragments/general :: header"> </div>
 /*her kommer til at være listen over de registrerede lejeaftaler, hvor datareg kan afslutte og skadereg kan registrere skader alt efter status/*
 
+<div class="container">
+
+    <div class="displaybox" th:each="lejeaftale : ${lejeaftaler}">
+        <p> th:text="${lejeaftale.bil}"</p>
+        <p> th:text="${lejeaftale.kunde}"</p>
+    </div>
+
+
+</div>
 
 </body>
 </html>

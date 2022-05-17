@@ -127,5 +127,14 @@ label {
     border: none;
 }
 
+/*visning box hvor de forskellige lejeaftaler skal vises*/
+.container .displaybox {
+    background-color: darkcyan;
+    width: 100%;
+    border-color: darkslateblue;
+    padding: 5%;
+    margin-bottom: 10px;
+}
+
 
 
