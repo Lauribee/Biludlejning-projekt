@@ -18,7 +18,7 @@ public class Testm {
         LejeaftaleRepository lr = new LejeaftaleRepository();
         BilRepository br = new BilRepository();
 
-        System.out.println(br.getCarFromDB("1234567890"));
+        System.out.println(lr.getLejeaftaleFromDB("75849109812"));
 
 
         System.out.println(kr.getKundeFromDB("2601011234"));

@@ -3,6 +3,7 @@ package com.example.bilabonnement.controllers;
 import com.example.bilabonnement.models.Bil;
 import com.example.bilabonnement.models.Kunde;
 import com.example.bilabonnement.models.Lejeaftale;
+import com.example.bilabonnement.models.LejeaftaleKrav;
 import com.example.bilabonnement.repository.BilRepository;
 import com.example.bilabonnement.repository.KundeRepository;
 import com.example.bilabonnement.repository.LejeaftaleRepository;
@@ -22,9 +23,9 @@ public class LejeaftaleController {
     BilRepository br = new BilRepository();
 
     @PostMapping("/opret-lejeaftale")
-    public String opretLejeaftale(@RequestBody Map<String, String> test) throws SQLException {
-        String cprnummer = test.get("cprnummer");
-        String stelnummer = test.get("stelnummer");
+    public String opretLejeaftale(LejeaftaleKrav lejeaftalekrav) throws SQLException {
+        String cprnummer = lejeaftalekrav.getCprnummer();
+        String stelnummer = lejeaftalekrav.getStelnummer();
 
         System.out.println(stelnummer);
         System.out.println(cprnummer);
