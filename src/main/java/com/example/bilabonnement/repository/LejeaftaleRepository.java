@@ -9,6 +9,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.Properties;
 
 public class LejeaftaleRepository{
@@ -105,6 +106,45 @@ public class LejeaftaleRepository{
             System.err.println(e.getMessage());
         }
         return currentLejeaftale;
+    }
+
+    public ArrayList<Lejeaftale> hentAlleLejeaftalerFraDB() throws SQLException {
+
+        createConnection();
+
+        String query = " USE biludlejning";
+        pps = con.prepareStatement(query);
+        pps.execute();
+
+        query = " SELECT * FROM lejeaftaler" ;
+        ArrayList<Lejeaftale> lejeaftaler = new ArrayList<Lejeaftale>();
+        String cprnummer = null;
+        String stelnummer = null;
+        boolean status = false;
+        Lejeaftale currentLejeaftale = null;
+
+        try (Statement stmt = con.createStatement()) {
+            ResultSet rs = stmt.executeQuery(query);
+            while (rs.next()) {
+                int lejeaftaleID = rs.getInt("lejeaftaleID");
+                cprnummer = rs.getString("cprnummer");
+                stelnummer = rs.getString("stelnummer");
+                status = rs.getBoolean("status");
+
+                Kunde currentKunde = kr.getKundeFromDB(cprnummer);
+                Bil currentBil = br.getCarFromDB(stelnummer);
+                currentLejeaftale = new Lejeaftale(currentBil, currentKunde, status);
+                lejeaftaler.add(currentLejeaftale);
+
+            }
+
+
+
+        } catch (SQLException e) {
+            System.err.println("GOT AN EXCEPTION");
+            System.err.println(e.getMessage());
+        }
+        return lejeaftaler;
     }
 
 }

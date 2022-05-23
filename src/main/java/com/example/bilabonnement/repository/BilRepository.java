@@ -2,6 +2,7 @@ package com.example.bilabonnement.repository;
 
 
 import com.example.bilabonnement.models.Bil;
+import com.example.bilabonnement.models.Kunde;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -43,7 +44,7 @@ public class BilRepository{
             pps = con.prepareStatement(query);
             pps.execute();
 
-            query = " SELECT * FROM biludlejning.biler WHERE stelnummer =  " + stelnummerFraBil;
+            query = " SELECT * FROM biludlejning.biler WHERE stelnummer =  " + " '" + stelnummerFraBil + "'";
 
 
             try (Statement stmt = con.createStatement()) {
@@ -67,5 +68,38 @@ public class BilRepository{
             System.err.println(e);
         }
         return currentBil;
+    }
+
+    public void insertBil(Bil bil) {
+
+        try {
+
+            createConnection();
+
+            String query = " USE biludlejning";
+            pps = con.prepareStatement(query);
+            pps.execute();
+
+
+            query = " INSERT INTO biler (stelnummer, mærke, model, stålpris, regafgift, CO2udledning, status)" + " VALUES (?, ?, ?, ?, ?, ?, ?)";
+            pps = con.prepareStatement(query);
+            pps.setString(1, bil.getStelnummer());
+            pps.setString(2, bil.getMærke());
+            pps.setString(3, bil.getModel());
+            pps.setDouble(4, bil.getStålpris());
+            pps.setDouble(5, bil.getRegafgift());
+            pps.setDouble(6, bil.getCO2udledning());
+            pps.setString(7, bil.getStatus().toString());
+
+            pps.execute();
+
+            con.close();
+
+        } catch (SQLException e) {
+            System.err.println("GOT AN EXCEPTION!");
+            System.err.println(e.getMessage());
+
+        }
+
     }
 }

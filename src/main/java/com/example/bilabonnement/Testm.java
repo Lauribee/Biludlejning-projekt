@@ -22,5 +22,14 @@ public class Testm {
 
 
         System.out.println(kr.getKundeFromDB("2601011234"));
+
+        Bil bil = new Bil("1112223334", "Dacia", "Duster", 170, 700, 120, Bil.BilStatus.UDLEJET);
+        Kunde kunde = new Kunde("69420", "McDonaldsvej", "Christian Legenden");
+        System.out.println(kunde.toString());
+        kr.insertKunde(kunde);
+        br.insertBil(bil);
+
+
+
     }
 }

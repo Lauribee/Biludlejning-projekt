@@ -7,17 +7,16 @@
 </head>
 <body>
 <div th:replace="fragments/general :: header"> </div>
-/*her kommer til at være listen over de registrerede lejeaftaler, hvor datareg kan afslutte og skadereg kan registrere skader alt efter status/*
 
-<div class="container">
 
     <div class="displaybox" th:each="lejeaftale : ${lejeaftaler}">
-        <p> th:text="${lejeaftale.bil}"</p>
-        <p> th:text="${lejeaftale.kunde}"</p>
+        <p th:text="${lejeaftale.kunde}"></p>
+        <p th:text="${lejeaftale.bil}"></p>
+
+
+
     </div>
 
-
-</div>
 
 </body>
 </html>

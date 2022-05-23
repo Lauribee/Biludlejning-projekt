@@ -84,14 +84,13 @@ public class Bil {
 
     @Override
     public String toString() {
-        return "Bil{" +
-                "stelnummer='" + stelnummer + '\'' +
-                ", mærke='" + mærke + '\'' +
-                ", model='" + model + '\'' +
-                ", stålpris=" + stålpris +
-                ", regafgift=" + regafgift +
-                ", CO2udledning=" + CO2udledning +
-                ", status=" + status +
-                '}';
+        return "Udlejet bil: " + mærke + " " +
+                model +
+                " || Info: " +
+                " || Stelnummer: " + stelnummer +
+                " || Stålpris: " + stålpris + ",-" +
+                " || Registreringsafgift: " + regafgift +
+                " || CO2udledning: " + CO2udledning + "g/km";
+
     }
 }

@@ -46,12 +46,10 @@ public class LejeaftaleController {
     }
 
 
-    /*@GetMapping("/lejeaftaler")
-    public String wishlist(Model model, LejeaftaleKrav lejeaftaleKrav) throws SQLException {
+    @GetMapping("/lejeaftaler")
+    public String wishlist(Model model) throws SQLException {
 
-        String cprnummer = lejeaftaleKrav.getCprnummer();
-
-        ArrayList<Lejeaftale> lejeaftaler = new ArrayList<Lejeaftale>((Collection<? extends Lejeaftale>) lr.getLejeaftaleFromDB(cprnummer));
+        ArrayList<Lejeaftale> lejeaftaler = new ArrayList<Lejeaftale>(lr.hentAlleLejeaftalerFraDB());
         System.out.println(lejeaftaler.size());
 
 
@@ -59,6 +57,6 @@ public class LejeaftaleController {
 
         return "lejeaftaler";
 
-    }*/
+    }
 
 }

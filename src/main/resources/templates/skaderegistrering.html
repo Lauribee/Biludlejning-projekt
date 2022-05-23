@@ -11,34 +11,12 @@
 <div class="container">
 
 
-        <div class="selection-box" onclick="openForm()">Registrer skader</div>
+        <a href="lejeaftaler.html" class="selection-box">Registrer skader</a>
 
 
-    <div class="popup-form" id="myForm">
-        <form class="form-container" method="POST" action="/skaderegistrering">
-            <h1>Skaderegistreringskema</h1>
-
-            <label for=""><b>Navn</b></label>
-            <input id="wishlist-name" type="text" placeholder="Indtast ønskeliste navn" name="wishlist-name" required>
-            <label for="wishlist-description"><b>Beskrivelse</b></label>
-            <input id="wishlist-description" type="text" placeholder="Indtast beskrivelse" name="wishlist-description">
-
-            <input type="submit" class="btn" value="Opret ønskeliste">
-            <input type="button" class="btn cancel" onclick="closeForm()" value="Luk">
-        </form>
-    </div>
 
 </div>
 
-<script>
-    function openForm() {
-        document.getElementById("myForm").style.display = "block";
-    }
-
-    function closeForm() {
-        document.getElementById("myForm").style.display = "none";
-    }
-</script>
 
 </body>
 </html>

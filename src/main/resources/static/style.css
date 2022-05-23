@@ -1,5 +1,4 @@
 body {
-    margin: 0;
     background-color: lightblue;
 }
 
@@ -30,12 +29,11 @@ body {
     text-decoration: none;
 }
 
-/*background color*/
+
 .container {
     margin-top: 50px;
-    margin-left: 250px;
-    margin-right: 250px;
-    text-align: center;
+    display: flex;
+    justify-content: center;
 
 }
 
@@ -128,13 +126,27 @@ label {
 }
 
 /*visning box hvor de forskellige lejeaftaler skal vises*/
-.container .displaybox {
+.displaybox {
     background-color: darkcyan;
     width: 100%;
-    border-color: darkslateblue;
+    border: none;
     padding: 5%;
     margin-bottom: 10px;
 }
 
+.statusmenubtn {
+    float: right;
+    padding: 25px 10px;
+    position: absolute;
+    color: darkslateblue;
+}
 
+.dropdownmenu {
+    display: none;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    z-index: 1;
+}
 
+.dropdownmenu:hover .dropdown-content {display: block;}
