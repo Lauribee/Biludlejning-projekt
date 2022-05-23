@@ -35,6 +35,10 @@ public class Lejeaftale {
         this.status = status;
     }
 
+    public double getRegAfgift() {
+        return this.bil.getRegafgift();
+    }
+
 
 
     @Override

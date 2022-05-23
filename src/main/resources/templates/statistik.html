@@ -7,7 +7,17 @@
 </head>
 <body>
 <div th:replace="fragments/general :: header"> </div>
-/* her kommer til at være alt der har at gøre med statistik/*
+
+<div class="displaybox">
+    <h1>Antal udlejede biler på dette tidspunkt: </h1>
+    <p style="font-size: 25px" th:text="${udlejedeBiler}"></p>
+    <h1>Samlet pris på de udlejede biler (i kr.): </h1>
+    <p style="font-size: 25px" th:text="${prisPaaUdlejedeBiler}"></p>
+
+
+
+</div>
+
 
 </body>
 </html>
