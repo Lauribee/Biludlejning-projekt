@@ -1,10 +1,57 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{style.css}" href="../static/style.css">
     <title>Faktura</title>
 </head>
 <body>
+<div th:replace="fragments/general :: header"> </div>
+
+<form method="POST" action="/index">
+    <label for="skade-1">Skade 1</label>
+    <input id="skade-1" placeholder="Indtast skade" type="text" name="skade-1"/><br><br>
+    <input id="pris-1" placeholder="Indtast pris" type="text" name="pris-1"/>
+
+    <label for="skade-2">Skade 2</label>
+    <input id="skade-2" placeholder="Indtast skade" type="text" name="skade-2"><br><br>
+    <input id="pris-2" placeholder="Indtast pris" type="text" name="pris-2"/>
+
+    <label for="skade-3">Skade 3</label>
+    <input id="skade-3" placeholder="Indtast skade" type="text" name="skade-3"/><br><br>
+    <input id="pris-3" placeholder="Indtast pris" type="text" name="pris-3"/>
+
+    <label for="skade-4">Skade 4</label>
+    <input id="skade-4" placeholder="Indtast skade" type="text" name="skade-4"/><br><br>
+    <input id="pris-4" placeholder="Indtast pris" type="text" name="pris-4"/>
+
+    <label for="skade-5">Skade 5</label>
+    <input id="skade-5" placeholder="Indtast skade" type="text" name="skade-5"/><br><br>
+    <input id="pris-5" placeholder="Indtast pris" type="text" name="pris-5"/>
+
+    <label for="skade-6">Skade 6</label>
+    <input id="skade-6" placeholder="Indtast skade" type="text" name="skade-6"/><br><br>
+    <input id="pris-6" placeholder="Indtast pris" type="text" name="pris-6"/>
+
+    <label for="skade-7">Skade 7</label>
+    <input id="skade-7" placeholder="Indtast skade" type="text" name="skade-7"/><br><br>
+    <input id="pris-7" placeholder="Indtast pris" type="text" name="pris-7"/>
+
+    <label for="skade-8">Skade 8</label>
+    <input id="skade-8" placeholder="Indtast skade" type="text" name="skade-8"/><br><br>
+    <input id="pris-8" placeholder="Indtast pris" type="text" name="pris-8"/>
+
+    <label for="skade-9">Skade 9</label>
+    <input id="skade-9" placeholder="Indtast skade" type="text" name="skade-9"/><br><br>
+    <input id="pris-9" placeholder="Indtast pris" type="text" name="pris-9"/>
+
+    <label for="skade-10">Skade 10</label>
+    <input id="skade-10" placeholder="Indtast skade" type="text" name="skade-10"/><br><br>
+    <input id="pris-10" placeholder="Indtast pris" type="text" name="pris-10"/>
+
+    <input class="signup-button" type="submit" value="Send faktura"><br><br>
+
 
 </body>
+
 </html>
