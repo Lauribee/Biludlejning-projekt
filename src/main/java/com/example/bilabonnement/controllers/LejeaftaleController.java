@@ -33,8 +33,6 @@ public class LejeaftaleController {
         String cprnummer = lejeaftalekrav.getCprnummer();
         String stelnummer = lejeaftalekrav.getStelnummer();
 
-        System.out.println(stelnummer);
-        System.out.println(cprnummer);
         Kunde kunde = kr.getKundeFromDB(cprnummer);
         Bil bil = br.getCarFromDB(stelnummer);
 
