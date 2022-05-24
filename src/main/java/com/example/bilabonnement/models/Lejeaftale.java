@@ -4,11 +4,13 @@ public class Lejeaftale {
     private Bil bil;
     private Kunde kunde;
     private boolean status;
+    private int lejeaftaleID;
 
-    public Lejeaftale(Bil bil, Kunde kunde, boolean status) {
+    public Lejeaftale(Bil bil, Kunde kunde, boolean status, int lejeaftaleID) {
         this.bil = bil;
         this.kunde = kunde;
         this.status = true;
+        this.lejeaftaleID = lejeaftaleID;
     }
 
     public Bil getBil() {
@@ -39,7 +41,13 @@ public class Lejeaftale {
         return this.bil.getRegafgift();
     }
 
+    public int getLejeaftaleID() {
+        return lejeaftaleID;
+    }
 
+    public void setLejeaftaleID(int lejeaftaleID) {
+        this.lejeaftaleID = lejeaftaleID;
+    }
 
     @Override
     public String toString() {

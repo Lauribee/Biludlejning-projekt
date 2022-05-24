@@ -16,6 +16,11 @@ public class Repository {
         private PreparedStatement pps;
         private Properties properties = new Properties();
 
+        /*ideen var at vi lavede en metode til at oprette forbindelse,
+        og så genbruge den hver gang vi skulle oprette forbindelser i de andre
+        metoder, men der var noget der ikke virkede så vi lavede metoden der hvor den blev brugt mest også
+         */
+
         public void createConnection() {
             try {
                 InputStream inputStream = new FileInputStream("src/main/resources/config.properties");

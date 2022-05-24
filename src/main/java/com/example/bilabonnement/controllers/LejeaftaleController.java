@@ -7,18 +7,16 @@ import com.example.bilabonnement.models.LejeaftaleKrav;
 import com.example.bilabonnement.repository.BilRepository;
 import com.example.bilabonnement.repository.KundeRepository;
 import com.example.bilabonnement.repository.LejeaftaleRepository;
+import com.example.bilabonnement.services.InfoService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.context.request.WebRequest;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
+import java.util.Locale;
 
 
 @Controller
@@ -27,6 +25,7 @@ public class LejeaftaleController {
     LejeaftaleRepository lr = new LejeaftaleRepository();
     KundeRepository kr = new KundeRepository();
     BilRepository br = new BilRepository();
+    InfoService is = new InfoService();
 
     @PostMapping("/opret-lejeaftale")
     public String opretLejeaftale(LejeaftaleKrav lejeaftalekrav) throws SQLException {
@@ -35,9 +34,9 @@ public class LejeaftaleController {
 
         Kunde kunde = kr.getKundeFromDB(cprnummer);
         Bil bil = br.getCarFromDB(stelnummer);
+        int lejeaftaleID = lr.getLejeaftaleFromDB(cprnummer).getLejeaftaleID();
 
-
-        Lejeaftale lejeaftale = new Lejeaftale(bil, kunde, true);
+        Lejeaftale lejeaftale = new Lejeaftale(bil, kunde, true, lejeaftaleID);
         System.out.println(lejeaftale.toString());
         lr.indsætLejeaftale(lejeaftale);
         return "redirect:/opret-lejeaftale";
@@ -45,7 +44,7 @@ public class LejeaftaleController {
 
 
     @GetMapping("/lejeaftaler")
-    public String wishlist(Model model) throws SQLException {
+    public String lejeaftaler(Model model) throws SQLException {
 
         ArrayList<Lejeaftale> lejeaftaler = new ArrayList<Lejeaftale>(lr.hentAlleLejeaftalerFraDB());
         System.out.println(lejeaftaler.size());
@@ -55,6 +54,23 @@ public class LejeaftaleController {
 
         return "lejeaftaler";
 
+    }
+
+    @PostMapping("/lejeaftaler")
+    public String ændreStatus(WebRequest wr) throws SQLException {
+        int lejeaftaleID = Integer.parseInt(wr.getParameter("lejeaftaleID"));
+
+        String statusInput = wr.getParameter("status");
+
+        if (statusInput.equalsIgnoreCase("UDLEJET")) {
+            is.opdaterStatusPåBil(lejeaftaleID, Bil.BilStatus.UDLEJET);
+        } else if (statusInput.equalsIgnoreCase("TILBAGELEVERET")) {
+            is.opdaterStatusPåBil(lejeaftaleID, Bil.BilStatus.TILBAGELEVERET);
+        } else if (statusInput.equalsIgnoreCase("AFSLUTTET")) {
+            is.opdaterStatusPåBil(lejeaftaleID, Bil.BilStatus.AFSLUTTET);
+        }
+
+        return "lejeaftaler";
     }
 
 }

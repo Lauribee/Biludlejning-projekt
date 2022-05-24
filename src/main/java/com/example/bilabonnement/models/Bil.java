@@ -90,7 +90,8 @@ public class Bil {
                 " || Stelnummer: " + stelnummer +
                 " || Stålpris: " + stålpris + ",-" +
                 " || Registreringsafgift: " + regafgift +
-                " || CO2udledning: " + CO2udledning + "g/km";
+                " || CO2udledning: " + CO2udledning + "g/km" +
+                " || Status: " + status;
 
     }
 }
