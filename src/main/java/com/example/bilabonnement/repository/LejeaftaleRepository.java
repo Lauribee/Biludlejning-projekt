@@ -149,8 +149,8 @@ public class LejeaftaleRepository{
         return lejeaftaler;
     }
 
-    public Bil getBilFraLejeaftale(int LejeaftaleID) throws SQLException {
-       Bil bil = null;
+    public String getBilFraLejeaftale(int lejeaftaleID) throws SQLException {
+       String stelnummer = null;
 
         createConnection();
 
@@ -158,27 +158,26 @@ public class LejeaftaleRepository{
         pps = con.prepareStatement(query);
         pps.execute();
 
+        query = " SELECT * FROM lejeaftaler" + " WHERE lejeaftaleID =" + " '" + lejeaftaleID + "'";
+
         try (Statement stmt = con.createStatement()) {
 
 
                 ResultSet rs = stmt.executeQuery(query);
                 while (rs.next()) {
-                    String stelnummer = rs.getString("stelnummer");
-                    String mærke = rs.getString("mærke");
-                    String model = rs.getString("model");
-                    double stålpris = rs.getDouble("stålpris");
-                    double regafgift = rs.getDouble("regafgift");
-                    double CO2udledning = rs.getDouble("CO2udledning");
-                    Bil.BilStatus status = Bil.BilStatus.valueOf(rs.getString("status"));
+                    lejeaftaleID = rs.getInt("lejeaftaleID");
+                    String cprNummer = rs.getString("cprnummer");
+                    stelnummer = rs.getString("stelnummer");
+                    boolean status = rs.getBoolean("status");
 
-                    bil = new Bil(stelnummer, mærke, model, stålpris, regafgift, CO2udledning, status);
+
                 }
             } catch (SQLException e) {
                 System.err.println("GOT AN EXCEPTION");
                 System.err.println(e.getMessage());
                 System.err.println(e);
         }
-        return bil;
+        return stelnummer;
     }
 
 

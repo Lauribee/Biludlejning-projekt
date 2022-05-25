@@ -38,8 +38,8 @@ public class InfoService {
     }
 
     public void opdaterStatusPåBil(int lejeaftaleID, Bil.BilStatus status) throws SQLException {
-         Bil bilTilAtOpdatere = lr.getBilFraLejeaftale(lejeaftaleID);
-       br.opdaterBil(bilTilAtOpdatere,status);
+         String stelnummer = lr.getBilFraLejeaftale(lejeaftaleID);
+       br.opdaterBil(stelnummer,status);
 
     }
 }

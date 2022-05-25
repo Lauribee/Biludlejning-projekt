@@ -103,7 +103,7 @@ public class BilRepository{
 
     }
 
-    public void opdaterBil(Bil bil, Bil.BilStatus status) throws SQLException {
+    public void opdaterBil(String stelnummer, Bil.BilStatus status) throws SQLException {
         createConnection();
 
         String query = " USE biludlejning";
@@ -111,6 +111,9 @@ public class BilRepository{
         pps.execute();
 
 
-        query = " UPDATE biler" + " SET status = " + "'" + status + "'";
+        query = " UPDATE biler" + " SET status = " + "'" + status + "'" + " WHERE stelnummer = " + "'" + stelnummer + "'";
+
+        pps = con.prepareStatement(query);
+        pps.execute();
     }
 }

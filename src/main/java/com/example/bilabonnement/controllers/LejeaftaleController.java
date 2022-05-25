@@ -70,7 +70,7 @@ public class LejeaftaleController {
             is.opdaterStatusPåBil(lejeaftaleID, Bil.BilStatus.AFSLUTTET);
         }
 
-        return "lejeaftaler";
+        return "redirect:/lejeaftaler";
     }
 
 }
