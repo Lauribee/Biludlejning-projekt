@@ -16,7 +16,6 @@ import org.springframework.web.context.request.WebRequest;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Locale;
 
 
 @Controller
@@ -37,7 +36,6 @@ public class LejeaftaleController {
         int lejeaftaleID = lr.getLejeaftaleFromDB(cprnummer).getLejeaftaleID();
 
         Lejeaftale lejeaftale = new Lejeaftale(bil, kunde, true, lejeaftaleID);
-        System.out.println(lejeaftale.toString());
         lr.indsætLejeaftale(lejeaftale);
         return "redirect:/opret-lejeaftale";
     }
@@ -47,7 +45,6 @@ public class LejeaftaleController {
     public String lejeaftaler(Model model) throws SQLException {
 
         ArrayList<Lejeaftale> lejeaftaler = new ArrayList<Lejeaftale>(lr.hentAlleLejeaftalerFraDB());
-        System.out.println(lejeaftaler.size());
 
 
         model.addAttribute("lejeaftaler", lejeaftaler);
