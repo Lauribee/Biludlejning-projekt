@@ -25,7 +25,6 @@ public class KundeRepository{
             String password = properties.getProperty("db.password");
 
             con = DriverManager.getConnection(url, user, password);
-            System.out.println("connected to database");
 
         } catch (IOException | SQLException e) {
             System.out.println("error");
