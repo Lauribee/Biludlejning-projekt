@@ -61,8 +61,11 @@ body {
 /*The popup form - hidden by default */
 .popup-form {
     display: none;
-    position: center;
+    position: fixed;
+    bottom: 0;
+    right: 15px;
     border: 3px solid #f1f1f1;
+    z-index: 9;
 }
 
 /*add styles to the form container*/
@@ -128,23 +131,33 @@ label {
     border: none;
     padding: 5%;
     margin-bottom: 10px;
-    max-width: 90%;
-    display: flex;
-    float: right;
-}
+    max-width: 100%;
 
-.lejeaftaleIDbox {
-    max-width: 10%;
+}
+.lejeaftaleID {
+    background-color: darkslategray;
+    top: 8px;
+    left: 16px;
+}
+.lejeaftaleID .p {
+    max-width: 30%;
     float: left;
-    margin: 50px;
-    font-size: 25px;
+    font-size: 35px;
+
 }
 
-.paragraphbox {
+.paragraph-box {
+    top: 25px;
+    left: 16px;
     margin: 30px;
-    width: 70%
+    width: auto;
 }
 
+.status-box {
+    float: right;
+    font-size: large;
+    width: 30%;
+}
 .button {
     background-color: darkslateblue;
     border: 1px black;

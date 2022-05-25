@@ -49,6 +49,11 @@ import java.sql.SQLException;
             return "statistik";
         }
 
+        @GetMapping("/faktura")
+        public String faktura() {
+            return "faktura";
+        }
+
 
 
 

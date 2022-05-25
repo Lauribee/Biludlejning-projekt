@@ -8,29 +8,32 @@
 <body>
 <div th:replace="fragments/general :: header"> </div>
 
+<div class="btn-group">
+    <div class="button" onclick="openForm()">Skift status</div>
+    <a class="button" href="/faktura">Opret skadefaktura</a>
+</div>
+
 <div class="lejeaftaler" th:each="lejeaftale : ${lejeaftaler}">
-
-
-
-    <div class="btn-group">
-        <div class="button" onclick="openForm()">Skift status</div>
-        <a class="button" href="faktura.html">Opret skadefaktura</a>
-    </div>
-
-
 
 <div class="displaybox">
 
-    <div class="lejeaftaleIDbox">
+    <div class="lejeaftaleID">
         <p style="font-size: large" th:text="${lejeaftale.lejeaftaleID}"></p>
     </div>
 
-    <div class="paragraphbox">
-    <p th:text="${lejeaftale.kunde}"></p>
-    <p th:text="${lejeaftale.bil}"></p>
+    <div class="paragraph-box">
+        <p th:text="${lejeaftale.kunde}"></p>
+        <p th:text="${lejeaftale.bil}"></p>
     </div>
 
-    <div class="popup-form" id="myForm">
+    <div class="status-box">
+        <p th:text="${lejeaftale.bil.status}"></p>
+    </div>
+
+</div>
+</div>
+
+<div class="popup-form" id="myForm">
     <form class="form-container" method="POST" action="/lejeaftaler">
         <h1>Indtast ønsket status</h1>
 
@@ -43,9 +46,6 @@
         <button onclick="closeForm()"></button>
     </form>
 
-    </div>
-
-</div>
 </div>
 
 <script>
