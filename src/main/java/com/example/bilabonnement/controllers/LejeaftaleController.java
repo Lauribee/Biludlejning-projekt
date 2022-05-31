@@ -31,13 +31,18 @@ public class LejeaftaleController {
         String cprnummer = lejeaftalekrav.getCprnummer();
         String stelnummer = lejeaftalekrav.getStelnummer();
 
-        Kunde kunde = kr.getKundeFromDB(cprnummer);
-        Bil bil = br.getCarFromDB(stelnummer);
-        int lejeaftaleID = lr.getLejeaftaleFromDB(cprnummer).getLejeaftaleID();
+            Kunde kunde = kr.getKundeFromDB(cprnummer);
+            Bil bil = br.getCarFromDB(stelnummer);
+            int lejeaftaleID = lr.getLejeaftaleFromDB(cprnummer).getLejeaftaleID();
 
-        Lejeaftale lejeaftale = new Lejeaftale(bil, kunde, true, lejeaftaleID);
-        lr.indsætLejeaftale(lejeaftale);
-        return "redirect:/opret-lejeaftale";
+            if(kunde == null || bil == null) {
+            return "redirect:/";
+            } else {
+
+            Lejeaftale lejeaftale = new Lejeaftale(bil, kunde, true, lejeaftaleID);
+            lr.indsætLejeaftale(lejeaftale);
+            return "redirect:/lejeaftaler";
+        }
     }
 
 
