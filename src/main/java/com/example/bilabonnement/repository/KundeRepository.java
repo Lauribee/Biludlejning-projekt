@@ -32,6 +32,10 @@ public class KundeRepository{
         }
     }
 
+
+    /* Metode brugt til at indsætte kunder i database, så man havde nogle eksempler at arbejde med når man
+    skulle oprette en lejeaftale
+
     public void insertKunde(Kunde kunde) {
 
         try {
@@ -60,6 +64,8 @@ public class KundeRepository{
         }
 
     }
+
+     */
 
     public Kunde getKundeFromDB(String kundeCPR) throws SQLException {
         createConnection();

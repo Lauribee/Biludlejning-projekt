@@ -10,21 +10,11 @@ public class SkadePris {
         this.skadePris = skadePris;
     }
 
-    public String getSkadeBeskrivelse() {
-        return skadeBeskrivelse;
-    }
-
-    public void setSkadeBeskrivelse(String skadeBeskrivelse) {
-        this.skadeBeskrivelse = skadeBeskrivelse;
-    }
 
     public int getSkadePris() {
         return skadePris;
     }
 
-    public void setSkadePris(int skadePris) {
-        this.skadePris = skadePris;
-    }
 
     @Override
     public String toString() {

@@ -18,7 +18,7 @@ public class FakturaService {
 
         return "Lejeaftale nr = " + lejeaftaleID + "\n" +
                 "Samlet pris = " + samletPris + "\n" +
-                "Individuelle skader og priser = " + "\n" + skader.toString();
+                "Individuelle skader og priser = " + "\n" + skader;
 
     }
 }

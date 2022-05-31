@@ -16,25 +16,16 @@ public class Kunde {
         return cprnummer;
     }
 
-    public void setCprnummer(String cprnummer) {
-        this.cprnummer = cprnummer;
-    }
 
     public String getAdresse() {
         return adresse;
     }
 
-    public void setAdresse(String adresse) {
-        this.adresse = adresse;
-    }
 
     public String getNavn() {
         return navn;
     }
 
-    public void setNavn(String navn) {
-        this.navn = navn;
-    }
 
     @Override
     public String toString() {

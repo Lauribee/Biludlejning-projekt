@@ -2,12 +2,9 @@ package com.example.bilabonnement.repository;
 
 
 import com.example.bilabonnement.models.Bil;
-import com.example.bilabonnement.models.Kunde;
-
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.ObjectInputFilter;
 import java.sql.*;
 import java.util.Properties;
 
@@ -69,6 +66,11 @@ public class BilRepository{
         return currentBil;
     }
 
+
+    /*brugt til at oprette og indsætte biler i databasen fra main, så at man kunne have nogle bil eksempler at teste de forskellige
+    funktionaliteter med
+
+
     public void insertBil(Bil bil) {
 
         try {
@@ -100,7 +102,7 @@ public class BilRepository{
 
         }
 
-    }
+    }*/
 
     public void opdaterBil(String stelnummer, Bil.BilStatus status) throws SQLException {
         createConnection();

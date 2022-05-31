@@ -30,9 +30,6 @@ public class Bil {
         return stelnummer;
     }
 
-    public void setStelnummer(String stelnummer) {
-        this.stelnummer = stelnummer;
-    }
 
     public String getMærke() {
         return mærke;
@@ -46,9 +43,6 @@ public class Bil {
         return model;
     }
 
-    public void setModel(String model) {
-        this.model = model;
-    }
 
     public double getStålpris() {
         return stålpris;
@@ -62,25 +56,15 @@ public class Bil {
         return regafgift;
     }
 
-    public void setRegafgift(double regafgift) {
-        this.regafgift = regafgift;
-    }
 
     public double getCO2udledning() {
         return CO2udledning;
-    }
-
-    public void setCO2udledning(double CO2udledning) {
-        this.CO2udledning = CO2udledning;
     }
 
     public BilStatus getStatus() {
         return status;
     }
 
-    public void setStatus(BilStatus status) {
-        this.status = status;
-    }
 
     @Override
     public String toString() {

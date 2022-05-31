@@ -17,25 +17,16 @@ public class Lejeaftale {
         return bil;
     }
 
-    public void setBil(Bil bil) {
-        this.bil = bil;
-    }
 
     public Kunde getKunde() {
         return kunde;
     }
 
-    public void setKunde(Kunde kunde) {
-        this.kunde = kunde;
-    }
 
     public boolean getStatus() {
         return status;
     }
 
-    public void setStatus(boolean status) {
-        this.status = status;
-    }
 
     public double getRegAfgift() {
         return this.bil.getRegafgift();
@@ -45,9 +36,6 @@ public class Lejeaftale {
         return lejeaftaleID;
     }
 
-    public void setLejeaftaleID(int lejeaftaleID) {
-        this.lejeaftaleID = lejeaftaleID;
-    }
 
     @Override
     public String toString() {
