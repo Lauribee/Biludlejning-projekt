@@ -2,8 +2,8 @@ package com.example.bilabonnement.models;
 
 public class SkadePris {
 
-    private String skadeBeskrivelse;
-    private int skadePris;
+    private final String skadeBeskrivelse;
+    private final int skadePris;
 
     public SkadePris(String skadeBeskrivelse, int skadePris) {
         this.skadeBeskrivelse = skadeBeskrivelse;

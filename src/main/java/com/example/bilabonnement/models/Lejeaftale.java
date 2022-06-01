@@ -1,10 +1,10 @@
 package com.example.bilabonnement.models;
 
 public class Lejeaftale {
-    private Bil bil;
-    private Kunde kunde;
-    private boolean status;
-    private int lejeaftaleID;
+    private final Bil bil;
+    private final Kunde kunde;
+    private final boolean status;
+    private final int lejeaftaleID;
 
     public Lejeaftale(Bil bil, Kunde kunde, boolean status, int lejeaftaleID) {
         this.bil = bil;

@@ -14,7 +14,7 @@ public class Repository {
 
         private Connection con;
         private PreparedStatement pps;
-        private Properties properties = new Properties();
+        private final Properties properties = new Properties();
 
         /*ideen var at vi lavede en metode til at oprette forbindelse,
         og så genbruge den hver gang vi skulle oprette forbindelser i de andre

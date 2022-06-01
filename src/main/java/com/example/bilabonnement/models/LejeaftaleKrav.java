@@ -1,8 +1,8 @@
 package com.example.bilabonnement.models;
 
 public class LejeaftaleKrav {
-    private String cprnummer;
-    private String stelnummer;
+    private final String cprnummer;
+    private final String stelnummer;
 
     public LejeaftaleKrav(String cprnummer, String stelnummer) {
         this.cprnummer = cprnummer;

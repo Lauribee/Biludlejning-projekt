@@ -1,8 +1,6 @@
 package com.example.bilabonnement.services;
 
-import com.example.bilabonnement.models.Lejeaftale;
 import com.example.bilabonnement.models.SkadePris;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;

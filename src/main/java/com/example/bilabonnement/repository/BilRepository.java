@@ -11,7 +11,7 @@ import java.util.Properties;
 public class BilRepository{
     private Connection con;
     private PreparedStatement pps;
-    private Properties properties = new Properties();
+    private final Properties properties = new Properties();
 
     public void createConnection() {
         try {

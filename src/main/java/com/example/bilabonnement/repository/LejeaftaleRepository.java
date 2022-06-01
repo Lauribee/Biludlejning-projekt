@@ -16,9 +16,9 @@ public class LejeaftaleRepository{
 
     private Connection con;
     private PreparedStatement pps;
-    private KundeRepository kr = new KundeRepository();
-    private BilRepository br = new BilRepository();
-    private Properties properties = new Properties();
+    private final KundeRepository kr = new KundeRepository();
+    private final BilRepository br = new BilRepository();
+    private final Properties properties = new Properties();
 
     public void createConnection() {
         try {

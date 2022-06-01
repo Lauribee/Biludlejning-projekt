@@ -8,13 +8,13 @@ public class Bil {
         AFSLUTTET
     }
 
-    private String stelnummer;
+    private final String stelnummer;
     private String mærke;
-    private String model;
+    private final String model;
     private double stålpris;
-    private double regafgift;
-    private double CO2udledning;
-    private BilStatus status;
+    private final double regafgift;
+    private final double CO2udledning;
+    private final BilStatus status;
 
     public Bil(String stelnummer, String mærke, String model, double stålpris, double regafgift, double co2udledning, BilStatus status) {
         this.stelnummer = stelnummer;

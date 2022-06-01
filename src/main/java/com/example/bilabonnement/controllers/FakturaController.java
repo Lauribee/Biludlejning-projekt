@@ -11,7 +11,7 @@ import java.util.ArrayList;
 @Controller
 public class FakturaController {
 
-    private FakturaService fs = new FakturaService();
+    private final FakturaService fs = new FakturaService();
 
     @PostMapping("/index")
     public String fakturaOprettelse(WebRequest dataFraForm) {
@@ -20,12 +20,12 @@ public class FakturaController {
         ArrayList<SkadePris> skader = new ArrayList<>();
         for (int i = 0; i < 10; i++) {
 
-            String skadeParam = "skade-" + Integer.toString(i + 1);
+            String skadeParam = "skade-" + (i + 1);
             String skadeBeskrivelse = dataFraForm.getParameter(skadeParam);
             if(skadeBeskrivelse == ""){
                 break;
             } else {
-            String prisParam = "pris-" + Integer.toString(i + 1);
+            String prisParam = "pris-" + (i + 1);
             int skadePris = Integer.parseInt(dataFraForm.getParameter(prisParam));
 
                 SkadePris nySkadePris = new SkadePris(skadeBeskrivelse, skadePris);
