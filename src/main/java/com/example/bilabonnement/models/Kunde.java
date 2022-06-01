@@ -17,15 +17,6 @@ public class Kunde {
     }
 
 
-    public String getAdresse() {
-        return adresse;
-    }
-
-
-    public String getNavn() {
-        return navn;
-    }
-
 
     @Override
     public String toString() {
