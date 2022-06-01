@@ -39,10 +39,6 @@ public class Bil {
         this.mærke = mærke;
     }
 
-    public String getModel() {
-        return model;
-    }
-
 
     public double getStålpris() {
         return stålpris;
@@ -56,10 +52,6 @@ public class Bil {
         return regafgift;
     }
 
-
-    public double getCO2udledning() {
-        return CO2udledning;
-    }
 
     public BilStatus getStatus() {
         return status;
